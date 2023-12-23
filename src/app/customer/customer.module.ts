@@ -13,12 +13,14 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatInputModule} from "@angular/material/input";
 import {HttpClientModule} from "@angular/common/http";
 import {DemoAngularMaterialModule} from "../DemoAngularMaterialModule";
+import { CartComponent } from './components/cart/cart.component';
 
 
 @NgModule({
   declarations: [
     CustomerComponent,
-    DashboardComponent
+    DashboardComponent,
+    CartComponent
   ],
     imports: [
         CommonModule,
