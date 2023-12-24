@@ -3,6 +3,7 @@ import {CustomerService} from "../../services/customer.service";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {MatDialog} from "@angular/material/dialog";
+import {PlaceOrderComponent} from "../place-order/place-order.component";
 
 @Component({
   selector: 'app-cart',
@@ -19,7 +20,7 @@ export class CartComponent {
   constructor(private customerService: CustomerService,
               private snackbar: MatSnackBar,
               private fb: FormBuilder,
-              private dialog: MatDialog,
+              public dialog: MatDialog,
               ) { }
 
   ngOnInit(): void {
@@ -65,5 +66,9 @@ export class CartComponent {
       this.snackbar.open('Product quantity decreased.', 'Close', {duration: 5000});
       this.getCart();
     })
+  }
+
+  placeOrder(){
+    this.dialog.open(PlaceOrderComponent);
   }
 }
