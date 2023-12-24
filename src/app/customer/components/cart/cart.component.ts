@@ -59,4 +59,11 @@ export class CartComponent {
       this.getCart();
     })
   }
+
+  decreaseQuantity(productId: any){
+    this.customerService.decreaseProductQuantity(productId).subscribe(res => {
+      this.snackbar.open('Product quantity decreased.', 'Close', {duration: 5000});
+      this.getCart();
+    })
+  }
 }

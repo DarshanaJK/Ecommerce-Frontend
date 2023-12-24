@@ -46,6 +46,16 @@ export class CustomerService {
     })
   }
 
+  decreaseProductQuantity(productId: any) : Observable<any> {
+    const cartDto = {
+      productId: productId,
+      userId: UserStorageService.getUserId(),
+    }
+    return this.http.post(BASIC_URL + `api/customer/deduction`,cartDto, {
+      headers: this.createAuthorizationHeader(),
+    })
+  }
+
   getCartByUserId() : Observable<any> {
     const userId = UserStorageService.getUserId();
     return this.http.get(BASIC_URL + `api/customer/cart/${userId}`, {
