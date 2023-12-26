@@ -14,6 +14,7 @@ const routes: Routes = [
   { path: 'my_orders', component: MyOrdersComponent },
   { path: 'ordered_products/:orderId', component: ViewOrderedProductsComponent },
   { path: 'review/:productId', component: ReviewOrderedProductComponent },
+  { path: 'product/:productId', component: ViewOrderedProductsComponent },
 ];
 
 @NgModule({
